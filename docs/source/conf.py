@@ -99,14 +99,16 @@ html_theme_options = {
 html_sidebars = {
     '**': [
         # 'about.html',
+        'sidebar.html',
         # 'globaltoc.html',
+
         'navigation.html',
         'relations.html',
         # sourcelink.html
         'searchbox.html',
+        # 'donate.html',
     ]
 }
-
 
 
 htmlhelp_basename = 'GCPDS_visualizations_doc'
@@ -190,7 +192,7 @@ autodoc_mock_imports = [
     'IPython',
     'matplotlib',
     'numpy',
-    
+
     # 'base_server.WSHandler_Serial',
     # 'base_server.WSHandler_WiFi',
     # 'ws.base_server',
@@ -204,6 +206,7 @@ todo_include_todos = True
 
 # modindex_common_prefix = ['bci_neurofeedback.']
 
+
 def setup(app):
     app.add_css_file("custom.css")
 
@@ -212,8 +215,8 @@ highlight_language = 'none'
 html_sourcelink_suffix = ''
 
 # nbsphinx_execute_arguments = [
-    # "--InlineBackend.figure_formats={'svg', 'pdf'}",
-    # "--InlineBackend.rc={'figure.dpi': 96}",
+# "--InlineBackend.figure_formats={'svg', 'pdf'}",
+# "--InlineBackend.rc={'figure.dpi': 96}",
 # ]
 
 nbsphinx_execute = 'never'
