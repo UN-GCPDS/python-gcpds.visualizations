@@ -17,8 +17,8 @@ Installation
    |EEG|
 
 .. |Brain connectivities| image:: _images/conn.png
-   :target: 01-connectivity_circosplot.ipynb
+   :target: notebooks/01-connectivity_circosplot.html
 .. |Accuracy and Gain Comparison (AGCO)| image:: _images/agco.png
-   :target: 02-comparison_accuracy_gain.ipynb
+   :target: notebooks/02-comparison_accuracy_gain.html
 .. |EEG| image:: _images/eeg.png
-   :target: 03-eeg.ipynb
+   :target: notebooks/03-eeg.html

@@ -7,7 +7,7 @@
 
    notebooks/01-connectivity_circosplot
    notebooks/02-comparison_accuracy_gain
-   notebooks/03.eeg
+   notebooks/03-eeg
 
 
 .. only:: html
