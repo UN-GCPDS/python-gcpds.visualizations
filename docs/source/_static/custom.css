@@ -97,3 +97,23 @@ dl:not(.docutils) dl dt {
 .body > .highlight-ipython3 {
     display: none;
 }
+
+.gcpds-images0 {
+    display: flow-root;
+}
+
+img[alt="Brain connectivities"],
+img[alt="Accuracy and Gain Comparison (AGCO)"],
+img[alt="EEG"] {
+
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: 250px;
+    float: left;
+    border: 2px solid #e7e7e7;
+    margin: 10px;
+    border-radius: 4px;
+    padding: 5px;
+
+}

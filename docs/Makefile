@@ -28,3 +28,4 @@ buildapi:
 	sphinx-apidoc -fMeETl -o source/_modules ../gcpds/visualizations
 	jupyter-nbconvert --to rst source/notebooks/readme.ipynb
 	jupyter-nbconvert --to markdown source/notebooks/readme.ipynb --output ../../../README.md
+	python fix_readme.py
