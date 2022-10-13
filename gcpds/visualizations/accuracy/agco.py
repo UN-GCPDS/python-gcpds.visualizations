@@ -46,8 +46,8 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
     plt.xlabel(xlabel)
     plt.xticks(range(50), ticks[index], rotation=90)
 
-    ax.spines.right.set_visible(False)
-    ax.spines.top.set_visible(False)
+    ax.spines[right].set_visible(False)
+    ax.spines[top].set_visible(False)
 
     l1 = plt.legend([p1, p2, p3, p4], labels + gain_labels,
                     loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1.13))
