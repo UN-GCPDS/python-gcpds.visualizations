@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='gcpds-visualizations',
-    version='0.1',
+    version='0.2',
     packages=['gcpds.visualizations'],
 
     author='Yeison Cardona',
@@ -20,7 +20,7 @@ setup(
 
     install_requires=[
         'python-circos',
-        'matplotlib',
+        'matplotlib>=3.5.3',
         'numpy',
         'mne',
     ],
