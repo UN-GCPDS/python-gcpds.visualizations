@@ -14,7 +14,9 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
     if ax is None:
         ax = plt.subplot(111)
 
-    if sort == 'method_1':
+    if sort is None:
+        index = np.arange(len(method_2))
+    elif sort == 'method_1':
         index = np.argsort(method_1)[::-1]
     elif sort == 'method_1r':
         index = np.argsort(method_1)
@@ -22,13 +24,11 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
         index = np.argsort(method_2)[::-1]
     elif sort == 'method_2r':
         index = np.argsort(method_2)
-    else:
-        index = np.arange(len(method_2))
 
     colors = np.array(method_2[index] -
                       method_1[index] < 0, dtype=np.object_)
 
-    if sort.startswith('method_1'):
+    if sort is None or sort.startswith('method_1'):
         p1, = plt.plot(method_1[index], color=reference_c, linestyle='--',)
         p2, = plt.plot(method_2[index], color=gain_c,
                        linestyle='--', alpha=0.3)
