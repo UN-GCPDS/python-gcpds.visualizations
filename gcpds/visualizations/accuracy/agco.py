@@ -25,8 +25,8 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
     elif sort == 'method_2r':
         index = np.argsort(method_2)
 
-    colors = np.array(method_2[index] -
-                      method_1[index] < 0, dtype=np.object_)
+    colors = np.array(method_2[index]
+                      - method_1[index] < 0, dtype=np.object_)
 
     if sort is None or sort.startswith('method_1'):
         p1, = plt.plot(method_1[index], color=reference_c, linestyle='--',)
@@ -57,7 +57,7 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
 
     plt.ylabel(ylabel)
     plt.xlabel(xlabel)
-    plt.xticks(range(50), ticks[index], rotation=90)
+    plt.xticks(range(len(ticks)), ticks[index], rotation=90)
 
     try:
         ax.spines.right.set_visible(False)
@@ -71,7 +71,8 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
     except:
         pass
 
-    l1 = plt.legend(plots, labels, loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1))
+    l1 = plt.legend(plots, labels, loc='upper center',
+                    ncol=2, bbox_to_anchor=(0.5, 1))
     plt.gca().add_artist(l1)
 
     return plt.gcf()
