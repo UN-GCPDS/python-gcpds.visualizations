@@ -15,3 +15,4 @@ Subpackages
    visualizations.accuracy
    visualizations.connectivities
    visualizations.series
+   visualizations.topoplots
