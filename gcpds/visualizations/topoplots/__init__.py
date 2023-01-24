@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 
 # ----------------------------------------------------------------------
-def topoplot(data, channels, montage_name='standard_1020', cmap='coolwarm', resolution=64, interp='cubic', contours=0, ax=None):
+def topoplot(data, channels, montage_name='standard_1020', cmap='coolwarm', resolution=64, interp='cubic', contours=0, ax=None,vmin=None,vmax=None):
 
     info = mne.create_info(
         channels,
@@ -29,7 +29,8 @@ def topoplot(data, channels, montage_name='standard_1020', cmap='coolwarm', reso
                          res=resolution,
                          extrapolate='head',
                          show=False,
-                         image_interp=interp)
+                         image_interp=interp,
+                         vlim=(vmin,vmax))
 
     # plt.close()
     return ax
