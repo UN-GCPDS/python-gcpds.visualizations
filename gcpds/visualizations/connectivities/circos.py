@@ -208,17 +208,25 @@ class CircosConnectivity:
         if self.vlim[0]:
             norm = matplotlib.colors.Normalize(
                                 vmin=self.vlim[0], vmax=self.vlim[1])
+            for v_, src, des in sorted(chords): 
+                self.circle_.chord_plot(src, des,
+                                        facecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        edgecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        linewidth=1,
+                                        )            
         else:
             norm = matplotlib.colors.Normalize(
                                 vmin=threshold, vmax=connectivities[connectivities != 1].max())            
-        for v_, src, des in sorted(chords): 
-            self.circle_.chord_plot(src, des,
-                                    facecolor=matplotlib.pyplot.cm.get_cmap(
-                                        self.arcs_cmap)(norm(v_), norm(v_)),
-                                    edgecolor=matplotlib.pyplot.cm.get_cmap(
-                                        self.arcs_cmap)(norm(v_), 1),
-                                    linewidth=1,
-                                    )
+            for v_, src, des in sorted(chords): 
+                self.circle_.chord_plot(src, des,
+                                        facecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        edgecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        linewidth=1,
+                                        )
 
     # ----------------------------------------------------------------------
     @property
