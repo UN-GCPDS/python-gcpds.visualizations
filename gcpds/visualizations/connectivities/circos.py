@@ -25,7 +25,7 @@ class CircosConnectivity:
                  arcs_separation=30,
                  hemisphere_color='C6', channel_color='#c5c5c5', connection_width=1,
                  offset=0, drop_channels=False,
-                 fig=None
+                 fig=None,
                 vmin=None,vmax=None):
         """Constructor"""
 
