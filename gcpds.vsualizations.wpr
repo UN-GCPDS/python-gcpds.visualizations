@@ -1,5 +1,5 @@
 #!wing
-#!version=8.0
+#!version=9.0
 ##################################################################
 # Wing project file                                              #
 ##################################################################
@@ -11,4 +11,4 @@ proj.directory-list = [{'dirloc': loc('.'),
                         'recursive': True,
                         'watch_for_changes': True}]
 proj.file-type = 'shared'
-proj.main-file = loc('test/conn.py')
+proj.main-file = loc('gcpds/visualizations/models/test.py')
