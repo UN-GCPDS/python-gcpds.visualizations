@@ -25,7 +25,8 @@ class CircosConnectivity:
                  arcs_separation=30,
                  hemisphere_color='C6', channel_color='#c5c5c5', connection_width=1,
                  offset=0, drop_channels=False,
-                 fig=None):
+                 fig=None,
+                vmin=None,vmax=None):
         """Constructor"""
 
         self.areas = areas
@@ -44,6 +45,7 @@ class CircosConnectivity:
         self.offset = offset
         self.drop_channels = drop_channels
         self.channels = channels
+        self.vlim=(vmin,vmax)
         # self.markersize = markersize
 
         electrodes = sum([len(self.areas[k]) for k in self.areas])
@@ -202,19 +204,29 @@ class CircosConnectivity:
                            w2, x1 - self.arcs_separation)
 
             chords.append([connectivities[i][j], source, destination])
-
-        norm = matplotlib.colors.Normalize(
-            vmin=threshold, vmax=connectivities[connectivities != 1].max())
         # norm2 = matplotlib.colors.Normalize(vmin=min_alpha, vmax=connectivities[connectivities != 1].max())
-
-        for v_, src, des in sorted(chords):
-            self.circle_.chord_plot(src, des,
-                                    facecolor=matplotlib.pyplot.cm.get_cmap(
-                                        self.arcs_cmap)(norm(v_), norm(v_)),
-                                    edgecolor=matplotlib.pyplot.cm.get_cmap(
-                                        self.arcs_cmap)(norm(v_), 1),
-                                    linewidth=1,
-                                    )
+        if self.vlim[0]:
+            norm = matplotlib.colors.Normalize(
+                                vmin=self.vlim[0], vmax=self.vlim[1])
+            for v_, src, des in sorted(chords): 
+                self.circle_.chord_plot(src, des,
+                                        facecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        edgecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        linewidth=1,
+                                        )            
+        else:
+            norm = matplotlib.colors.Normalize(
+                                vmin=threshold, vmax=connectivities[connectivities != 1].max())            
+            for v_, src, des in sorted(chords): 
+                self.circle_.chord_plot(src, des,
+                                        facecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        edgecolor=matplotlib.pyplot.cm.get_cmap(
+                                            self.arcs_cmap)(norm(v_)),
+                                        linewidth=1,
+                                        )
 
     # ----------------------------------------------------------------------
     @property
