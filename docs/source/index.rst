@@ -2,8 +2,8 @@
 .. include:: notebooks/readme.rst
 
 
-Navigation
-==========
+Documentation Overview
+======================
         
 
 .. toctree::
@@ -13,16 +13,20 @@ Navigation
    notebooks/01-connectivity_circosplot
    notebooks/02-comparison_accuracy_gain
    notebooks/03-eeg
+   notebooks/04-topoplot
+
+
+
 
 .. only:: html
 
-    Docstrings
-    ==========
+    Code Reference
+    ==============
 
     * :ref:`genindex`
     * :ref:`modindex`
     * :ref:`search`
+       
 
-..
-  .. include:: notebooks/footer.rst
+
         

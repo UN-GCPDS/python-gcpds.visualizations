@@ -16,4 +16,6 @@ pip install -U git+https://github.com/UN-GCPDS/python-gcpds.visualizations.git
 
 [![EEG](_images/eeg.png)](notebooks/03-eeg.html)
     
+[![Topoplot](_images/topoplot.png)](notebooks/04-topoplot.html)
+    
 </div>
