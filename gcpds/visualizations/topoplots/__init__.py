@@ -5,12 +5,8 @@ from matplotlib import pyplot as plt
 
 
 # ----------------------------------------------------------------------
-<<<<<<< HEAD
 def topoplot(data, channels, montage_name='standard_1020', cmap='coolwarm', resolution=64, interp='cubic', contours=0, ax=None, vmin=None, vmax=None):
-=======
-def topoplot(data, channels, montage_name='standard_1020', cmap='coolwarm', resolution=64, interp='cubic', contours=0, ax=None,vmin=None,vmax=None):
->>>>>>> 5c7f8a92ad138bee6756cf80bf1ba1aa334c9c88
-
+    """"""
     info = mne.create_info(
         channels,
         sfreq=1,
@@ -34,13 +30,8 @@ def topoplot(data, channels, montage_name='standard_1020', cmap='coolwarm', reso
                          extrapolate='head',
                          show=False,
                          image_interp=interp,
-<<<<<<< HEAD
-                         vmin=vmin,
-                         vmax=vmax,
+                         vlim=(vmin, vmax),
                          )
-=======
-                         vlim=(vmin,vmax))
->>>>>>> 5c7f8a92ad138bee6756cf80bf1ba1aa334c9c88
 
     # plt.close()
     return ax
