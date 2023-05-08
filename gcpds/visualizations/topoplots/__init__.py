@@ -17,11 +17,11 @@ def topoplot(data, channels, montage_name='standard_1020', ax=None, **kwargs):
     if ax is None:
         ax = plt.subplot(111)
 
-    mne.viz.plot_topomap(data,
+    return mne.viz.plot_topomap(data,
                          info,
                          axes=ax,
                          **kwargs
                          )
 
     # plt.close()
-    return ax
+    #return ax
