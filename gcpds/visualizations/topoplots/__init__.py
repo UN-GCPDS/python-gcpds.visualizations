@@ -21,5 +21,3 @@ def topoplot(data, channels, montage_name='standard_1020', ax=None, **kwargs):
                                 **kwargs
                                 )
 
-    # plt.close()
-    # return ax
