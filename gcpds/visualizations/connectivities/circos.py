@@ -26,7 +26,7 @@ class CircosConnectivity:
                  hemisphere_color='C6', channel_color='#c5c5c5', connection_width=1,
                  offset=0, drop_channels=False,
                  fig=None,
-                vmin=None,vmax=None):
+                 vmin=None, vmax=None):
         """Constructor"""
 
         self.areas = areas
@@ -45,7 +45,7 @@ class CircosConnectivity:
         self.offset = offset
         self.drop_channels = drop_channels
         self.channels = channels
-        self.vlim=(vmin,vmax)
+        self.vlim = (vmin, vmax)
         # self.markersize = markersize
 
         electrodes = sum([len(self.areas[k]) for k in self.areas])
@@ -207,19 +207,19 @@ class CircosConnectivity:
         # norm2 = matplotlib.colors.Normalize(vmin=min_alpha, vmax=connectivities[connectivities != 1].max())
         if self.vlim[0]:
             norm = matplotlib.colors.Normalize(
-                                vmin=self.vlim[0], vmax=self.vlim[1])
-            for v_, src, des in sorted(chords): 
+                vmin=self.vlim[0], vmax=self.vlim[1])
+            for v_, src, des in sorted(chords):
                 self.circle_.chord_plot(src, des,
                                         facecolor=matplotlib.pyplot.cm.get_cmap(
                                             self.arcs_cmap)(norm(v_)),
                                         edgecolor=matplotlib.pyplot.cm.get_cmap(
                                             self.arcs_cmap)(norm(v_)),
                                         linewidth=1,
-                                        )            
+                                        )
         else:
             norm = matplotlib.colors.Normalize(
-                                vmin=threshold, vmax=connectivities[connectivities != 1].max())            
-            for v_, src, des in sorted(chords): 
+                vmin=threshold, vmax=connectivities[connectivities != 1].max())
+            for v_, src, des in sorted(chords):
                 self.circle_.chord_plot(src, des,
                                         facecolor=matplotlib.pyplot.cm.get_cmap(
                                             self.arcs_cmap)(norm(v_)),
@@ -267,10 +267,10 @@ class CircosConnectivity:
                              axes=ax,
                              names=self.channels,
                              sensors=True,
-                             show_names=True,
+                             # show_names=True,
                              contours=0,
                              cmap=self.areas_cmap,
-                             outlines='skirt',
+                             # outlines='skirt',
                              res=64,
                              extrapolate='head',
                              show=False,
