@@ -30,18 +30,18 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
     colors = np.array(method_2[index]
                       - method_1[index] < 0, dtype=np.object_)
 
-    if sort is None or sort=='method_1':
-        p1, = plt.plot(method_1[index], color=reference_c, linestyle='--',)
-        p2, = plt.plot(method_2[index], color=gain_c,
-                       linestyle='--', alpha=0.3)
-        colors[colors == 0] = gain_c
-        colors[colors == 1] = loss_c
-    elif sort=='method_2':
+    if sort=='method_2':
         p1, = plt.plot(method_2[index], color=reference_c, linestyle='--',)
         p2, = plt.plot(method_1[index], color=gain_c,
                        linestyle='--', alpha=0.3)
         colors[colors == 0] = loss_c
         colors[colors == 1] = gain_c
+    else:
+        p1, = plt.plot(method_1[index], color=reference_c, linestyle='--',)
+        p2, = plt.plot(method_2[index], color=gain_c,
+                       linestyle='--', alpha=0.3)
+        colors[colors == 0] = gain_c
+        colors[colors == 1] = loss_c
 
     plots = [p1, p2]
 
