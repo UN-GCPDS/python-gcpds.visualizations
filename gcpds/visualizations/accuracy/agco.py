@@ -24,6 +24,8 @@ def agco(method_1, method_2, ticks, labels, sort='method_1', reference_c='C1', g
         index = np.argsort(method_2)[::-1]
     elif sort == 'method_2r':
         index = np.argsort(method_2)
+    else:
+        index = sort
 
     colors = np.array(method_2[index]
                       - method_1[index] < 0, dtype=np.object_)
