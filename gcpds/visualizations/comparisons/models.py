@@ -4,8 +4,64 @@ import matplotlib
 
 
 # ----------------------------------------------------------------------
-def models(data1, data2=None, group_labels=[], external_labels=[], internal_labels=[], groups_space1=0.3, groups_space2=0.3, cmap1=['cool'], cmap2=['viridis'], limits=[0.4, 0.5], space=0.1, theta1=0, theta2=0, grid=True, rlabel_position=30):
-    """"""
+def multi_layer_polar_plot(
+    data1: np.ndarray,
+    data2: np.ndarray = None,
+    group_labels: list[str] = [],
+    external_labels: list[str] = [],
+    internal_labels: list[str] = [],
+    groups_space1: float = 0.3,
+    groups_space2: float = 0.3,
+    cmap1: list[str] = ['cool'],
+    cmap2: list[str] = ['viridis'],
+    limits: list[float] = [0.4, 0.5],
+    space: float = 0.1,
+    theta1: float = 0,
+    theta2: float = 0,
+    grid: bool = True,
+    rlabel_position: int = 30
+) -> plt.Axes:
+    """
+    Plots data on a polar coordinate system with various customization options.
+
+    Parameters
+    ----------
+    data1 : np.ndarray
+        The primary dataset for the plot.
+    data2 : np.ndarray, optional
+        The secondary dataset for the plot.
+    group_labels : list[str], optional
+        Labels for different groups in the dataset.
+    external_labels : list[str], optional
+        Labels to be placed externally on the plot.
+    internal_labels : list[str], optional
+        Labels to be placed internally on the plot.
+    groups_space1 : float, optional
+        Space between groups in the primary dataset.
+    groups_space2 : float, optional
+        Space between groups in the secondary dataset.
+    cmap1 : list[str], optional
+        Colormap for the primary dataset.
+    cmap2 : list[str], optional
+        Colormap for the secondary dataset.
+    limits : list[float], optional
+        Limits for the radial axis.
+    space : float, optional
+        Space between different sections of the plot.
+    theta1 : float, optional
+        Initial angle for the primary dataset.
+    theta2 : float, optional
+        Initial angle for the secondary dataset.
+    grid : bool, optional
+        Flag to display grid.
+    rlabel_position : int, optional
+        Position of the radial labels.
+
+    Returns
+    -------
+    plt.Axes
+        The matplotlib Axes object with the plot.
+    """
 
     theta1 = theta1 * np.pi / 180
     data1_ = data1 - np.min(data1)
